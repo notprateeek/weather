@@ -14,28 +14,25 @@ window.addEventListener('load', () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const proxy = 'https://cors-anywhere.herokuapp.com/';
-      const api = `${proxy}https://api.darksky.net/forecastfd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+      const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}`;
 
+      //problem starts here
+      console.log(position);
       fetch(api)
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           const { temperature, summary, icon } = data.currently;
-
-          //set DOM elements from API
+          // set DOM elements from API
           temperatureDegree.textContent = temperature;
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
-
-          //formula
+          // formula
           let celsius = (temperature - 32) * (5 / 9);
-
-          //set icon
+          // set icon
           setIcons(icon, document.querySelector('.icon'));
-
-          //change degree
+          // change degree
           temperatureSection.addEventListener('click', () => {
             if (temperatureSpan.textContent === 'F') {
               temperatureSpan.textContent = 'C';
