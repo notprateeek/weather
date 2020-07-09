@@ -5,6 +5,12 @@
           box-sizing: border-box;
 }
 
+.location-timezone,
+.temperature-degree,
+.temperature-description, span {
+  font-size: 30px;
+}
+
 body {
   height: 100vh;
   display: -webkit-box;
@@ -53,10 +59,13 @@ body .temperature .degree-section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 30px;
   cursor: pointer;
 }
 
+body .temperature .degree-section .temperature-degree {
+  margin: 2.5px;
+}
+
 body .temperature .degree-section span {
-  margin: 10px;
+  margin: 2.5px;
 }

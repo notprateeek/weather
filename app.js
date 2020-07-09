@@ -40,11 +40,11 @@ window.addEventListener('load', () => {
 
           //change temperature
           temperatureSection.addEventListener('click', () => {
-            if (temperatureSpan.textContent === 'C') {
-              temperatureSpan.textContent = 'F';
+            if (temperatureSpan.textContent === '°C') {
+              temperatureSpan.textContent = '°F';
               temperatureDegree.textContent = Math.floor(fahrenheit);
             } else {
-              temperatureSpan.textContent = 'C';
+              temperatureSpan.textContent = '°C';
               temperatureDegree.textContent = temp;
             }
           });
